@@ -41,7 +41,7 @@ const ArticleForm = ( {
 
         // use form data to be able to send a file to the server
         const data = new FormData();
-        data.append( 'image', values.image[ 0 ] );
+        data.append( 'image', values.image);
         data.append( 'title', values.title );
         data.append( 'body', values.body );
         data.append( 'category_id', values.category_id );
@@ -49,9 +49,9 @@ const ArticleForm = ( {
         try {
           await API.post( '/articles', data ); // post data to server
           form.resetFields();
-          setFileList( [] );
-          setImageUrl( null );
-          setIsSaving( false );
+          // setFileList( [] );
+          // setImageUrl( null );
+          // setIsSaving( false );
           onSubmit();
         } catch( e ) {
           setIsSaving( false );
@@ -174,33 +174,17 @@ const ArticleForm = ( {
           <Input type='textarea' />
         </Form.Item>
 
-        <Form.Item name='image'
-                   label='Upload'
-                   valuePropName='fileList'
-                   getValueFromEvent={ normPhotoFile }
-                   rules={ [
-                     {
-                       required: true,
-                       message: 'Sube tu foto'
-                     }
-                   ] }
+        <Form.Item
+          name='image'
+          label='Link'
+          rules={ [
+            {
+              required: true,
+              message: 'Ingresa el link de una imagen'
+            }
+          ] }
         >
-          <Upload name='files'
-                  accept='image/jpeg,image/png'
-                  listType='picture-card'
-                  multiple={ false }
-                  showUploadList={ false }
-                  beforeUpload={ () => false }
-            // onChange={ handleChangePhoto }
-                  fileList={ fileList }
-          >
-            { imageUrl
-              ? <img src={ imageUrl } alt='Foto' style={ { width: '80px' } } />
-              : <div>
-                <PlusOutlined />
-                <div className='ant-upload-text'>Upload</div>
-              </div> }
-          </Upload>
+          <Input type='textarea' />
         </Form.Item>
 
         <Form.Item name='category_id'
