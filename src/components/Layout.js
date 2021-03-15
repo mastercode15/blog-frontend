@@ -111,24 +111,7 @@ const MainLayout = props => {
               </a>
             </Col>
 
-            <Col xs={ {
-              span: 24,
-              offset: 0
-            } }
-                 md={ {
-                   span: 4,
-                   offset: 4
-                 } }
-                 className='contact-links'>
-              <p><strong>Contáctanos</strong></p>
-              <p><MailOutlined /> <a href='mailto:chalo.salvador@grupomenta.com'>chalo.salvador@grupomenta.com</a></p>
-              <p><WhatsAppOutlined /> <a href='https://wa.me/593984794808' target='_blank' rel='noopener noreferrer'>+593
-                9-8479-4808</a></p>
-              <p><GithubOutlined /> <a href='https://github.com/chalosalvador'
-                                       target='_blank'
-                                       rel='noopener noreferrer'>@chalosalvador</a>
-              </p>
-            </Col>
+
           </Row>
 
           <Row type='flex' justify='space-between' align='bottom'>
