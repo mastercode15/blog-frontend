@@ -51,7 +51,7 @@ const ArticleForm = ( {
           form.resetFields();
           // setFileList( [] );
           // setImageUrl( null );
-          // setIsSaving( false );
+          setIsSaving( false );
           onSubmit();
         } catch( e ) {
           setIsSaving( false );
